@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Islamic Corner 🌙</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(170, 190, 130, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(210, 180, 100, 0.18), transparent 25%),
+        linear-gradient(135deg, #102d27, #173f35, #0d2823);
+    color: #f7f0df;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 45px 20px 25px;
+}
+
+.moon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #f5d98b;
+}
+
+header p {
+    margin-top: 10px;
+    color: #ddd4bd;
+    font-size: 16px;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 20px 25px;
+}
+
+nav button {
+    background: rgba(255,255,255,0.08);
+    color: #f7f0df;
+    border: 1px solid rgba(245,217,139,0.4);
+    padding: 10px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: #d9b85b;
+    color: #16332c;
+    transform: translateY(-2px);
+}
+
+/* Main */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Sections */
+
+.section {
+    display: none;
+    animation: fade 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(245,217,139,0.25);
+    backdrop-filter: blur(10px);
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    color: #f5d98b;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.arabic {
+    font-size: 30px;
+    direction: rtl;
+    line-height: 2;
+    color: #fff7e5;
+    margin: 15px 0;
+}
+
+.hero p {
+    color: #d9d2c0;
+    line-height: 1.7;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.075);
+    border: 1px solid rgba(245,217,139,0.22);
+    border-radius: 22px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #d9b85b;
+    background: rgba(255,255,255,0.11);
+}
+
+.card .icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #f5d98b;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #d9d2c0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Page title */
+
+.page-title {
+    text-align: center;
+    color: #f5d98b;
+    font-size: 32px;
+    margin: 25px 0;
+}
+
+/* Dua cards */
+
+.dua {
+    background: rgba(255,255,255,0.07);
+    border-left: 3px solid #d9b85b;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.dua h3 {
+    color: #f5d98b;
+    margin-bottom: 12px;
+}
+
+.dua .arabic {
+    font-size: 24px;
+}
+
+.dua p {
+    color: #d9d2c0;
+    line-height: 1.6;
+}
+
+/* Tasbeeh */
+
+.tasbeeh {
+    text-align: center;
+    padding: 35px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 30px;
+}
+
+.counter {
+    font-size: 70px;
+    color: #f5d98b;
+    margin: 25px;
+}
+
+.counter-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #d9b85b;
+    background: #173f35;
+    color: #f5d98b;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.counter-button:active {
+    transform: scale(0.93);
+}
+
+.reset {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #d9b85b;
+    color: #16332c;
+    cursor: pointer;
+}
+
+/* Prayer */
+
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.prayer {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 18px;
+    border: 1px solid rgba(245,217,139,0.2);
+}
+
+.prayer h3 {
+    color: #f5d98b;
+}
+
+.prayer p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Names */
+
+.names {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 15px;
+}
+
+.name-card {
+    text-align: center;
+    background: rgba(255,255,255,0.07);
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.name-card .arabic {
+    font-size: 28px;
+}
+
+.name-card h3 {
+    color: #f5d98b;
+}
+
+.name-card p {
+    color: #d9d2c0;
+    margin-top: 5px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #aaa28f;
+    font-size: 14px;
+}
+
+footer span {
+    color: #f5d98b;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .arabic {
+        font-size: 24px;
+    }
+
+    nav button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="moon">🌙</div>
+    <h1>Islamic Corner</h1>
+    <p>A peaceful corner for your deen 🤍</p>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">🏠 Home</button>
+    <button onclick="showSection('quran')">📖 Quran</button>
+    <button onclick="showSection('duas')">🤲 Duas</button>
+    <button onclick="showSection('tasbeeh')">📿 Tasbeeh</button>
+    <button onclick="showSection('prayer')">🕋 Prayer</button>
+    <button onclick="showSection('names')">✨ 99 Names</button>
+</nav>
+
+<div class="container">
+
+<!-- HOME -->
+
+<section id="home" class="section active">
+
+    <div class="hero">
+
+        <h2>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h2>
+
+        <div class="arabic">
+            الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+        </div>
+
+        <p>
+            Welcome to Islamic Corner — a peaceful digital space
+            for Quran, duas, dhikr and remembrance of Allah.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card" onclick="showSection('quran')">
+            <div class="icon">📖</div>
+            <h3>Quran</h3>
+            <p>Spend a moment with the words of Allah.</p>
+        </div>
+
+        <div class="card" onclick="showSection('duas')">
+            <div class="icon">🤲</div>
+            <h3>Daily Duas</h3>
+            <p>Remember Allah through beautiful supplications.</p>
+        </div>
+
+        <div class="card" onclick="showSection('tasbeeh')">
+            <div class="icon">📿</div>
+            <h3>Tasbeeh</h3>
+            <p>Keep track of your dhikr with our digital counter.</p>
+        </div>
+
+        <div class="card" onclick="showSection('prayer')">
+            <div class="icon">🕋</div>
+            <h3>Prayer</h3>
+            <p>Keep your five daily prayers close to your heart.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QURAN -->
+
+<section id="quran" class="section">
+
+    <h2 class="page-title">📖 Quran</h2>
+
+    <div class="hero">
+
+        <div class="arabic">
+            قُلْ هُوَ اللَّهُ أَحَدٌ
+        </div>
+
+        <p>
+            Say, "He is Allah, the One."
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Surah Al-Ikhlas · 112:1</strong>
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="icon">🌙</div>
+
+        <h3>Daily Quran Reminder</h3>
+
+        <p>
+            Even a few verses each day can become a beautiful habit.
+            Read with reflection, understanding and sincerity.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DUAS -->
+
+<section id="duas" class="section">
+
+    <h2 class="page-title">🤲 Duas</h2>
+
+    <div class="dua">
+
+        <h3>For Knowledge</h3>
+
+        <div class="arabic">
+            رَبِّ زِدْنِي عِلْمًا
+        </div>
+
+        <p>
+            My Lord, increase me in knowledge.
+        </p>
+
+    </div>
+
+    <div class="dua">
+
+        <h3>For Good in This Life and the Hereafter</h3>
+
+        <div class="arabic">
+            رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً
+            وَفِي الْآخِرَةِ حَسَنَةً
+        </div>
+
+        <p>
+            Our Lord, grant us good in this world and good in the Hereafter.
+        </p>
+
+    </div>
+
+    <div class="dua">
+
+        <h3>For Forgiveness</h3>
+
+        <div class="arabic">
+            رَبِّ اغْفِرْ لِي
+        </div>
+
+        <p>
+            My Lord, forgive me.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- TASBEEH -->
+
+<section id="tasbeeh" class="section">
+
+    <h2 class="page-title">📿 Tasbeeh</h2>
+
+    <div class="tasbeeh">
+
+        <h3>سبحان الله</h3>
+
+        <div id="counter" class="counter">0</div>
+
+        <button class="counter-button" onclick="increaseCounter()">
+            TAP
+        </button>
+
+        <button class="reset" onclick="resetCounter()">
+            Reset
+        </button>
+
+        <p>
+            Keep your tongue busy with the remembrance of Allah.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PRAYER -->
+
+<section id="prayer" class="section">
+
+    <h2 class="page-title">🕋 Daily Prayer</h2>
+
+    <div class="hero">
+
+        <h2>الصَّلَاةُ</h2>
+
+        <p>
+            "Indeed, prayer has been decreed upon the believers
+            at specified times."
+        </p>
+
+    </div>
+
+    <div class="prayer-grid">
+
+        <div class="prayer">
+            <h3>Fajr</h3>
+            <p>—:—</p>
+        </div>
+
+        <div class="prayer">
+            <h3>Dhuhr</h3>
+            <p>—:—</p>
+        </div>
+
+        <div class="prayer">
+            <h3>Asr</h3>
+            <p>—:—</p>
+        </div>
+
+        <div class="prayer">
+            <h3>Maghrib</h3>
+            <p>—:—</p>
+        </div>
+
+        <div class="prayer">
+            <h3>Isha</h3>
+            <p>—:—</p>
+        </div>
+
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+        <h3>📍 Prayer Times</h3>
+        <p>
+            Prayer times will be connected to your location
+            in a future version of Islamic Corner.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- 99 NAMES -->
+
+<section id="names" class="section">
+
+    <h2 class="page-title">✨ 99 Names of Allah</h2>
+
+    <div class="names">
+
+        <div class="name-card">
+            <div class="arabic">الرَّحْمَنُ</div>
+            <h3>Ar-Rahman</h3>
+            <p>The Most Merciful</p>
+        </div>
+
+        <div class="name-card">
+            <div class="arabic">الرَّحِيمُ</div>
+            <h3>Ar-Raheem</h3>
+            <p>The Especially Merciful</p>
+        </div>
+
+        <div class="name-card">
+            <div class="arabic">الْمَلِكُ</div>
+            <h3>Al-Malik</h3>
+            <p>The King</p>
+        </div>
+
+        <div class="name-card">
+            <div class="arabic">الْقُدُّوسُ</div>
+            <h3>Al-Quddus</h3>
+            <p>The Most Holy</p>
+        </div>
+
+        <div class="name-card">
+            <div class="arabic">السَّلَامُ</div>
+            <h3>As-Salam</h3>
+            <p>The Source of Peace</p>
+        </div>
+
+        <div class="name-card">
+            <div class="arabic">الْمُؤْمِنُ</div>
+            <h3>Al-Mu'min</h3>
+            <p>The Giver of Security</p>
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<footer>
+    Made with 🤍 for <span>Islamic Corner</span>
+    <br><br>
+    May this little corner bring peace, remembrance and goodness. 🌙
+</footer>
+
+
+<script>
+
+function showSection(sectionId) {
+
+    const sections = document.querySelectorAll(".section");
+
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+let count = 0;
+
+function increaseCounter() {
+
+    count++;
+
+    document.getElementById("counter").textContent = count;
+}
+
+
+function resetCounter() {
+
+    count = 0;
+
+    document.getElementById("counter").textContent = count;
+}
+
+</script>
+
+</body>
+</html>
